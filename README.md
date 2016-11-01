@@ -558,7 +558,7 @@ Here's how this HTML looks given different screen sizes:
 ## Using our responsive grid
 To use the responsive grid, all we have to do is put it in a file called `grid.css` and include it with our new project where we want to use it.
 
-When comes the time to add our own project-specific CSS, we will do it in a **new file**, and not in the `grid.css` itself. This file will be included **after** our own CSS.
+When comes the time to add our own project-specific CSS, we will do it in a **new file**, and not in the `grid.css` itself. This file will be included **after** our grid.
 
 If we need to write our own media queries to hide/show some elements based on the screen size, we will **always use the same breakpoints as our grid system**. This means that, at most, there should be two different media queries in our project CSS: one for 641px+ screen sizes and one for 1025px+ screen sizes. All the styles that are outside a media query should apply to all of mobile, tablet and desktop/laptop devices. Styles in the 641px+ media query should apply to tablet and desktop, and styles in the 1025px+ media query should apply to desktop/laptop devices only.
 
