@@ -9,6 +9,32 @@ body {
 }
 
 /* ==================================== */
+/* Box-sizing fix! */
+html {
+  box-sizing: border-box;
+}
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+/* Utility classes */
+.responsive-img {
+  max-width: 100%;
+}
+.text-center {
+    text-align: center;
+}
+
+
+/* Grid system! */
+.row {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex; /* This will allow our row to display columns horizontally */
+    flex-wrap: wrap; /* This will become necessary to allow our flex boxes to stack in responsive mode */
+}
+
+/* ==================================== */
 
 .banner {
   background-color: #DEB887;
@@ -62,17 +88,12 @@ body {
   background-color: rgba(0,255,0,.35);
 }
 /* ==================================== */
-.features-section {
-  display: flex;
-  justify-content: center;
-}
 
 .features {
   display: flex;
   justify-content: center;
   align-items: center;
   list-style: none;
-  width: 70%;
 }
 
 .feature {
@@ -80,13 +101,15 @@ body {
   flex-direction: column;
   justify-content: space-around;
   text-align: center;
-  margin: 2% 5%;
+  margin: 2% 0;
 }
 
 .feature div {
   display: flex;
   justify-content: center;
   text-align: center;
+  margin: 0;
+  padding: 0;
 }
 
 .feature i {
@@ -116,17 +139,17 @@ body {
   display: flex;
   align-content: center;
   justify-content: center;
+  padding-left: 50px;
+  padding-right: 50px;
 }
 
 .notify-pane {
-  margin: 20px;
   padding: 20px;
 }
 
 .notify-action {
   display: flex;
   padding: 0px;
-  width: 70%;
 }
 
 .notify-input {
@@ -136,6 +159,7 @@ body {
   width: 200px;
   padding: 0;
   margin: 0;
+  border-radius: 9px 0 0 9px;
 }
 
 .notify-button {
@@ -149,13 +173,15 @@ body {
   padding: 0px;
   text-decoration: none;
   margin: 0;
+  border-radius: 0 9px 9px 0;
 }
 
 .notify-video {
   display: block;
-  height: 300px;
-  width: 300px;
+  height: 360px;
+  width: 316px;
 }
+
 /* ==================================== */
 .network {
   display: flex;
@@ -168,13 +194,20 @@ body {
   display: flex;
   flex-direction: column;
   align-content: center;
-  justify-content: center;  
+  justify-content: center;
   text-align: center;
   width: 100%;
 }
 
 .network p {
   padding: 0 20%;
+}
+
+.network-people {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  list-style: none;
 }
 
 .network-links {
@@ -208,17 +241,160 @@ body {
   justify-content: center;
   background-color: #cccccc;
   color: #666666;
-  height: 100px;
+  min-height: 150px;
 }
 
 .footer-links {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   list-style: none;
-  width: 100%;
 }
 
 .footer-link {
-  margin: 1rem;
+  min-width: 100px;
+}
+
+/* Small and up columns */
+
+/* If an element needs all twelve columns, then its width is 100%. Easy. */
+.col-small-12 {
+    width: 100%;
+}
+/* If an element needs 11 of 12 columns, its width is 11/12 * 100% */
+.col-small-11 {
+    width: 91.666%;
+}
+.col-small-10 {
+    width: 83.333%;
+}
+.col-small-9 {
+    width: 75%;
+}
+.col-small-8 {
+    width: 66.666%;
+}
+.col-small-7 {
+    width: 58.333%;
+}
+/* This is the class we'd use if we want two 50/50 elements next to each other */
+.col-small-6 {
+    width: 50%;
+}
+.col-small-5 {
+    width: 41.666%;
+}
+/* This is the class we'd use if we want three elements next to each other */
+.col-small-4 {
+    width: 33.333%;
+}
+/* This is the class we'd use if we want four elements next to each other */
+.col-small-3 {
+    width: 25%;
+}
+.col-small-2 {
+    width: 16.666%;
+}
+/* We'll almost NEVER use this */
+.col-small-1 {
+    width: 8.333%;
+}
+
+/* Medium and up screen sizes */
+@media only screen and (min-width: 641px) {
+  .inverse-order {
+    flex-direction: row-reverse;
+  }
+
+  .col-medium-12 {
+      width: 100%;
+  }
+  /* If an element needs 11 of 12 columns, its width is 11/12 * 100% */
+  .col-medium-11 {
+      width: 91.666%;
+  }
+  .col-medium-10 {
+      width: 83.333%;
+  }
+  .col-medium-9 {
+      width: 75%;
+  }
+  .col-medium-8 {
+      width: 66.666%;
+  }
+  .col-medium-7 {
+      width: 58.333%;
+  }
+  /* This is the class we'd use if we want two 50/50 elements next to each other */
+  .col-medium-6 {
+      width: 50%;
+  }
+  .col-medium-5 {
+      width: 41.666%;
+  }
+  /* This is the class we'd use if we want three elements next to each other */
+  .col-medium-4 {
+      width: 33.333%;
+  }
+  /* This is the class we'd use if we want four elements next to each other */
+  .col-medium-3 {
+      width: 25%;
+  }
+  .col-medium-2 {
+      width: 16.666%;
+  }
+  /* We'll almost NEVER use this */
+  .col-medium-1 {
+      width: 8.333%;
+  }
+
+}
+
+
+
+
+/* Large screen sizes */
+@media only screen and (min-width: 1025px) {
+  .col-large-12 {
+      width: 100%;
+  }
+  /* If an element needs 11 of 12 columns, its width is 11/12 * 100% */
+  .col-large-11 {
+      width: 91.666%;
+  }
+  .col-large-10 {
+      width: 83.333%;
+  }
+  .col-large-9 {
+      width: 75%;
+  }
+  .col-large-8 {
+      width: 66.666%;
+  }
+  .col-large-7 {
+      width: 58.333%;
+  }
+  /* This is the class we'd use if we want two 50/50 elements next to each other */
+  .col-large-6 {
+      width: 50%;
+  }
+  .col-large-5 {
+      width: 41.666%;
+  }
+  /* This is the class we'd use if we want three elements next to each other */
+  .col-large-4 {
+      width: 33.333%;
+  }
+  /* This is the class we'd use if we want four elements next to each other */
+  .col-large-3 {
+      width: 25%;
+  }
+  .col-large-2 {
+      width: 16.666%;
+  }
+  /* We'll almost NEVER use this */
+  .col-large-1 {
+      width: 8.333%;
+  }
+
 }
